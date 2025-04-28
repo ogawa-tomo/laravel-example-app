@@ -18,10 +18,9 @@ class BookController extends Controller
         return view('admin/book/index', ['books' => $books]);
     }
 
-    public function show(string $id): Book
+    public function show(Book $book): View
     {
-        $book = Book::findOrFail($id);
-        return $book;
+        return view('admin/book/show', compact('book'));
     }
 
     public function create(): View
