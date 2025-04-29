@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Middleware\AccessLogger;
+use App\Providers\DatabaseServiceProvider;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
