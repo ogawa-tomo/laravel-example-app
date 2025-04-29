@@ -75,10 +75,7 @@ class BookController extends Controller
 
     public function destroy(Book $book): RedirectResponse
     {
-        DB::transaction(function() use ($book) {
-            $book->authors()->detach();
-            $book->delete();
-        });
+        $book->delete();
 
         return redirect(route('book.index'))->with('message', $book->title . 'を削除しました。');
     }
